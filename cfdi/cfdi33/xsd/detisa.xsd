@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:deti="http://detisa.omicrom/"
+           targetNamespace="http://detisa.omicrom/" 
+           elementFormDefault="qualified" 
+           attributeFormDefault="unqualified">
+    <xs:element name="Observaciones">
+        <xs:annotation>
+            <xs:documentation>Addenda para crear el nodo de observaciones requerido por los clientes de facturacion de Detisa.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Observacion" minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>Nodo de observacion.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:attribute name="Descripcion" use="required">
+                            <xs:annotation>
+                                <xs:documentation>Texto libre.</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="0"/>
+                                        <xs:maxLength value="150"/>
+                                    </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
